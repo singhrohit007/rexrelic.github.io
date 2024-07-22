@@ -3,41 +3,38 @@
 <head>
 <title>Device-Specific Images</title>
 <style>
-html, body {
-    margin: 0;          /* Remove default margin on html and body */
-    padding: 0;         /* Remove default padding on html and body */
-    overflow: hidden;   /* Prevent scrolling on the body */
-}
-
-img {
-    max-width: 100%; 
-    height: 100vh;     /* Make images take up full viewport height */
-    object-fit: cover;  /* Cover the viewport while maintaining aspect ratio */
-}
-
-/* Hide all images initially */
 .pc-image, .tablet-image, .mobile-image {
-    display: none;
+    display: none; /* Hide all images by default */
 }
 
-/* Media Queries for Responsive Design */
-@media (min-width: 1025px) { /* Desktop */
-    .pc-image { display: block; }
+/* Show PC image on large screens */
+@media (min-width: 1025px) {
+    .pc-image {
+        display: block;
+        width: 100vw;
+    }
 }
-@media (min-width: 768px) and (max-width: 1024px) { /* Tablets (Landscape) */
-    .tablet-image { display: block; }
+
+/* Show tablet image on medium screens */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .tablet-image {
+        display: block;
+        width: 100vw;
+    }
 }
-@media (min-width: 481px) and (max-width: 767px) { /* Tablets (Portrait) */
-    .tablet-image { display: block; }
-}
-@media (max-width: 480px) { /* Mobile */
-    .mobile-image { display: block; }
+
+/* Show mobile image on small screens */
+@media (max-width: 480px) {
+    .mobile-image {
+        display: block;
+        width: 100vw;
+    }
 }
 </style>
 </head>
 <body>
-    <img class="pc-image" src="pc.png" alt="Image for PC">
-    <img class="tablet-image" src="tablet.jpg" alt="Image for Tablet">
-    <img class="mobile-image" src="mobile.png" alt="Image for Mobile">
+<img class="pc-image" src="Web.png" alt="Image for PC">
+<img class="tablet-image" src="tab.jpg" alt="Image for Tablet">
+<img class="mobile-image" src="mobile.png" alt="Image for Mobile">
 </body>
 </html>
